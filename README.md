@@ -26,13 +26,16 @@ The scripts uses the following libraries
 + import requests
 + from bs4 import BeautifulSoup as bs
 + import pandas as pd
++ import json
+
++ from pymongo import MongoClient
++ import urllib.parse
+
++ import urllib.parse
 
 The website that is being scraped every second is: https://www.blockchain.com/btc/unconfirmed-transactions
 This site contains real-time data of every BTC-transaction, although (un)confirmed.
-Every second the webpage is scraped, put into a dataframe and appended to the already excisting dataframe.
-
-After that, the user is able to extract the highest BTC-value transaction per minute later on in the script.
-The dataframe is not cleaned, so all data is still present when the scraping script has been aborted.
+Every second the webpage is scraped, put into a dictionary (json-string doesn't work!) and pushed to a local mongoDB
 
 ### Version
-Version 0.0.1
+Version 0.1.0

@@ -1,41 +1,28 @@
 # DA-AJ2122
 Databases advanced, webscraper, schooljaar 2021 - 2022, door Dylan Verniers
 
-## Realtime BTC-transaction scraper
-The BTC-transaction scraper scrapes real-time data of (un)confirmed BTC-transactions.
-It stores hashes, time, BTC-value and USD-value of all those transactions per second.
+## Version
+Version 0.2.0
 
-### Virtual Machine
-The scraper runs on Ubuntu software, on a virtual machine with Windows 2019 64-bit hardware.
-The Ubuntu is download from the wegpage of ubuntu.com (https://ubuntu.com/download/desktop).
-Ubuntu version 20.04.4 LTS.
+## Info
+This project consists of a realtime BTC-value scraper (webscraper_DV.py) as well as a realtime redis-cleaner (cleanpush.py)
+There seem to be some issues with running those scripts on a virtual machine, so it is advised to run them on your own laptop/PC
+They are proven to be working on Windows 10, 64-bit.
 
-The virtual machine is run on Virtual Box (https://www.virtualbox.org/)
-More in-depth specifics for the Virtual machine are:
-+ Installed Guest software
-+ Bi-directional clipboard and copy & paste
-+ 2048 MB of basic memory
-+ 1CPU
-+ 128MB Video memory
-+ 1 Monitor
-+ 50 GB dynamic memory
-+ Bridged adapter
+Before executing the scripts, make sure that; 
+- mongodb is up and running (net start mongodb | CMD) 
+(To install mongodb for windows use: https://medium.com/@LondonAppBrewery/how-to-download-install-mongodb-on-windows-4ee4b3493514)
+- As well as your redis-client (sudo service redis-server start | Ubuntu Terminal)
+(To download/consult docs Ubuntu terminal for windows use: https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview)
+- Python packages redis and pymongo are installed
+(! python -m pip install redis)
+(! python -m pip install pymongo)
 
-### Explanation of the script
-The scripts uses the following libraries
-+ import requests
-+ from bs4 import BeautifulSoup as bs
-+ import pandas as pd
-+ import json
 
-+ from pymongo import MongoClient
-+ import urllib.parse
+## webscraper_DV.py
+This script scrapes data of the website 'https://www.blockchain.com/btc/unconfirmed-transactions' in real-time.
+The information is put in a dictionary / string and then cached in Redis.
 
-+ import urllib.parse
-
-The website that is being scraped every second is: https://www.blockchain.com/btc/unconfirmed-transactions
-This site contains real-time data of every BTC-transaction, although (un)confirmed.
-Every second the webpage is scraped, put into a dictionary (json-string doesn't work!) and pushed to a local mongoDB
-
-### Version
-Version 0.1.0
+## cleanpush_DV.py
+This script cleans redis real-time, which was filled with data from the webscraper_DV.py
+It searches for the highest BTC-value, and pushes it to mongoDB.

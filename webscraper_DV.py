@@ -78,7 +78,7 @@ def fillRedis():
         js = frame_new.to_dict(orient="records")
         
         for element in js: 
-            r.set(element["_id"], json.dumps(element))
+            r.set(element["_id"], json.dumps(element), ex=210)
 
 
 fillRedis()

@@ -24,6 +24,7 @@ If not, use '! python -m pip install PACKAGENAME' to install it.
 Since both scripts are an infinite while-loop, you have to forcefully terminate them yourself.
 Don't worry, they are proven to be working at the same time.
 
+Execute both scripts via a terminal. VSC doesn't run two scripts at the same time.
 
 ## webscraper_DV.py
 This script scrapes data of the website 'https://www.blockchain.com/btc/unconfirmed-transactions' in real-time.

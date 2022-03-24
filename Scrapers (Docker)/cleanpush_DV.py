@@ -3,16 +3,13 @@
 ###################################################################################################
 import ast
 from pymongo import MongoClient
-import urllib.parse
 import redis
 import time
 
 ###################################################################################################
 ## MONGODB CREDENTIALS
 ###################################################################################################
-username = urllib.parse.quote_plus('dylan')
-password = urllib.parse.quote_plus('dylan')
-client = MongoClient(f"mongodb://{username}:{password}@127.0.0.1:8080")
+client = MongoClient("mongodb://127.0.0.1:8080")
 
 ###################################################################################################
 ## ESTABLISH CONNECTION WITH REDIS
@@ -25,7 +22,9 @@ r = redis.Redis(host="localhost", port=8081)
 ###################################################################################################
 def pushMongo():
     while 1:
+        print("Sleep")
         time.sleep(60)
+        print("Sleep over")
         BTC = 0
         dict_save = {}
 

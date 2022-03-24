@@ -30,12 +30,8 @@ Before executing the scripts, make sure that;
 (To install mongodb for windows use: https://medium.com/@LondonAppBrewery/how-to-download-install-mongodb-on-windows-4ee4b3493514)
 - As well as your redis-client (sudo service redis-server start | Ubuntu Terminal)
 (To download/consult docs Ubuntu terminal for windows use: https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview)
-- Python packages redis and pymongo are installed
-=> WHEN WORKING IN PYTHON
-(! python -m pip install redis)
-(! python -m pip install pymongo)
-=> WHEN WORKING OUTSIDE PYTHON
-(Or run packages.sh to make sure every package is installed)
+- All packages are installed
+(If there is a package that can't be found, run 'packages.bat' for Windows)
 - Make sure every Redis & MongoDB containers are pulled
 (Execute dockercon.bat)
 - Make sure Redis & MongoDB containers are running

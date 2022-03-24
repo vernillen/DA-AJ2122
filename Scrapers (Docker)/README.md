@@ -7,8 +7,11 @@ Version 0.2.0
 ## Info
 This project consists of a realtime BTC-value scraper (webscraper_DV.py) as well as a realtime redis-cleaner (cleanpush.py)
 There seem to be some issues with running those scripts on a virtual machine, so it is advised to run them on your own laptop/PC
+The 'Scrapers (basic)' scripts run on your local machine.
+The 'Scrapers (Docker)' scripts run communicating with docker.
 They are proven to be working on Windows 10, 64-bit.
 
+### Scrapers (basic) folder
 Before executing the scripts, make sure that;
 - mongodb is up and running (net start mongodb | CMD) 
 (To install mongodb for windows use: https://medium.com/@LondonAppBrewery/how-to-download-install-mongodb-on-windows-4ee4b3493514)
@@ -20,6 +23,23 @@ Before executing the scripts, make sure that;
 (! python -m pip install pymongo)
 => WHEN WORKING OUTSIDE PYTHON
 (Or run packages.sh to make sure every package is installed)
+
+### Scrapers (Docker) folder
+Before executing the scripts, make sure that;
+- mongodb is up and running (net start mongodb | CMD) 
+(To install mongodb for windows use: https://medium.com/@LondonAppBrewery/how-to-download-install-mongodb-on-windows-4ee4b3493514)
+- As well as your redis-client (sudo service redis-server start | Ubuntu Terminal)
+(To download/consult docs Ubuntu terminal for windows use: https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview)
+- Python packages redis and pymongo are installed
+=> WHEN WORKING IN PYTHON
+(! python -m pip install redis)
+(! python -m pip install pymongo)
+=> WHEN WORKING OUTSIDE PYTHON
+(Or run packages.sh to make sure every package is installed)
+- Make sure every Redis & MongoDB containers are pulled
+(Execute dockercon.sh)
+- Make sure Redis & MongoDB containers are running
+(Execute dockerrun.sh)
 
 Every other library is probably already installed on your machine.
 If not, use '! python -m pip install PACKAGENAME' to install it.

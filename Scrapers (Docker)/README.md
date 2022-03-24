@@ -39,7 +39,7 @@ Before executing the scripts, make sure that;
 - Make sure every Redis & MongoDB containers are pulled
 (Execute dockercon.sh)
 - Make sure Redis & MongoDB containers are running
-(Execute dockerrun.sh)
+(Execute MongoContainer.sh & RedisContainer.sh)
 
 Every other library is probably already installed on your machine.
 If not, use '! python -m pip install PACKAGENAME' to install it.

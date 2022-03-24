@@ -1,5 +1,5 @@
-# Mongo
+:: Mongo
 docker pull mongo
 
-# Redis
+:: Redis
 docker pull redis

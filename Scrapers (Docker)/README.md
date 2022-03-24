@@ -9,14 +9,17 @@ This project consists of a realtime BTC-value scraper (webscraper_DV.py) as well
 There seem to be some issues with running those scripts on a virtual machine, so it is advised to run them on your own laptop/PC
 They are proven to be working on Windows 10, 64-bit.
 
-Before executing the scripts, make sure that; 
+Before executing the scripts, make sure that;
 - mongodb is up and running (net start mongodb | CMD) 
 (To install mongodb for windows use: https://medium.com/@LondonAppBrewery/how-to-download-install-mongodb-on-windows-4ee4b3493514)
 - As well as your redis-client (sudo service redis-server start | Ubuntu Terminal)
 (To download/consult docs Ubuntu terminal for windows use: https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview)
 - Python packages redis and pymongo are installed
+=> WHEN WORKING IN PYTHON
 (! python -m pip install redis)
 (! python -m pip install pymongo)
+=> WHEN WORKING OUTSIDE PYTHON
+(Or run packages.sh to make sure every package is installed)
 
 Every other library is probably already installed on your machine.
 If not, use '! python -m pip install PACKAGENAME' to install it.

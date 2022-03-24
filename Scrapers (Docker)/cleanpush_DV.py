@@ -12,12 +12,12 @@ import time
 ###################################################################################################
 username = urllib.parse.quote_plus('dylan')
 password = urllib.parse.quote_plus('dylan')
-client = MongoClient(f"mongodb://{username}:{password}@127.0.0.1:27017")
+client = MongoClient(f"mongodb://{username}:{password}@127.0.0.1:8080")
 
 ###################################################################################################
 ## ESTABLISH CONNECTION WITH REDIS
 ###################################################################################################
-r = redis.Redis()
+r = redis.Redis(host="localhost", port=8081)
 
 ###################################################################################################
 ## CLEANING + PUSH FUNCTION

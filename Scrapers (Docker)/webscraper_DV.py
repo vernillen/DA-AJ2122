@@ -63,7 +63,7 @@ def fetchCurrent(URL):
 ## ESTABLISH CONNECTION WITH REDIS
 ## FLUSHDB IN CASE NOT EMPTY (safeguard)
 ###################################################################################################
-r = redis.Redis()
+r = redis.Redis(host="localhost", port=8081)
 r.flushdb()
 
 ###################################################################################################

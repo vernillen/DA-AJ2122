@@ -37,9 +37,9 @@ Before executing the scripts, make sure that;
 => WHEN WORKING OUTSIDE PYTHON
 (Or run packages.sh to make sure every package is installed)
 - Make sure every Redis & MongoDB containers are pulled
-(Execute dockercon.sh)
+(Execute dockercon.bat)
 - Make sure Redis & MongoDB containers are running
-(Execute MongoContainer.sh & RedisContainer.sh)
+(Execute MongoContainer.bat & RedisContainer.bat)
 
 Every other library is probably already installed on your machine.
 If not, use '! python -m pip install PACKAGENAME' to install it.
